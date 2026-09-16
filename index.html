@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#6f4aa8" />
+<title>中秋烤肉 250 項勾選清單｜嫦娥月兔版</title>
+<style>
+:root{
+  --ink:#3d3153; --muted:#786b8c; --paper:#fffaf1; --card:#fffdf8;
+  --plum:#6f4aa8; --plum2:#9c72cf; --peach:#ff8f8f; --gold:#f6bd58;
+  --mint:#7fc8a9; --line:rgba(86,61,115,.14); --shadow:0 15px 40px rgba(72,46,92,.14);
+  --safe: env(safe-area-inset-bottom, 0px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;background:
+  radial-gradient(circle at 10% 8%, rgba(255,216,151,.35) 0 100px, transparent 101px),
+  radial-gradient(circle at 88% 3%, rgba(199,172,236,.35) 0 130px, transparent 131px),
+  linear-gradient(180deg,#fff9ed 0,#fbf4ff 55%,#fff8ef 100%);min-height:100vh}
+body:before{content:"✦  ·  ✧   ·  ✦  ·  ✧";position:fixed;top:12px;left:2%;right:2%;text-align:center;color:rgba(111,74,168,.18);font-size:22px;letter-spacing:22px;pointer-events:none;z-index:0}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.wrap{width:min(1280px,calc(100% - 24px));margin:auto;position:relative;z-index:1}
+.hero{padding:26px 0 16px}
+.hero-card{position:relative;overflow:hidden;border:1px solid rgba(111,74,168,.12);border-radius:30px;background:linear-gradient(135deg,rgba(255,252,241,.96),rgba(246,237,255,.95));box-shadow:var(--shadow);padding:26px 28px;display:grid;grid-template-columns:1fr 230px;gap:20px;align-items:center}
+.hero-card:after{content:"";position:absolute;width:230px;height:230px;border-radius:50%;right:-78px;bottom:-90px;background:rgba(255,193,106,.15)}
+.kicker{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(111,74,168,.18);background:#fff9ff;padding:7px 12px;border-radius:999px;font-weight:800;font-size:13px;color:var(--plum)}
+h1{margin:11px 0 6px;font-size:clamp(28px,4vw,48px);line-height:1.1;letter-spacing:-.03em}
+.hero p{margin:0;color:var(--muted);font-size:15px;line-height:1.7}
+.hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.badge{background:#fff;border:1px solid var(--line);border-radius:12px;padding:7px 10px;font-size:13px;font-weight:750}
+.moon-scene{height:180px;position:relative;display:grid;place-items:center}.moon{width:150px;height:150px;border-radius:50%;background:radial-gradient(circle at 36% 34%,#fffbe1 0 24%,#ffe7a5 55%,#ffd276 100%);box-shadow:0 0 0 10px rgba(255,216,125,.12),0 0 44px rgba(255,198,83,.3);position:relative}
+.rabbit{position:absolute;width:72px;height:60px;right:26px;bottom:9px;background:#fff;border-radius:45% 48% 42% 45%;box-shadow:0 8px 18px rgba(82,61,102,.14)}
+.rabbit:before,.rabbit:after{content:"";position:absolute;width:20px;height:52px;background:#fff;border-radius:99px;top:-38px}.rabbit:before{left:10px;transform:rotate(-12deg)}.rabbit:after{left:35px;transform:rotate(8deg)}
+.rabbit .eye{position:absolute;width:5px;height:5px;border-radius:50%;background:#6f4aa8;right:15px;top:20px}.rabbit .tail{position:absolute;width:22px;height:22px;border-radius:50%;background:#fff;left:-10px;bottom:7px}
+.chang-e{position:absolute;left:2px;bottom:2px;background:rgba(111,74,168,.92);color:white;padding:8px 11px;border-radius:14px 14px 14px 4px;font-size:12px;font-weight:800;box-shadow:0 8px 20px rgba(111,74,168,.22)}
+.toolbar{position:sticky;top:0;z-index:20;padding:8px 0 10px;background:linear-gradient(180deg,rgba(255,249,237,.97),rgba(255,249,237,.88),transparent);backdrop-filter:blur(8px)}
+.toolbar-card{background:rgba(255,255,255,.88);border:1px solid var(--line);box-shadow:0 8px 28px rgba(75,52,94,.09);border-radius:22px;padding:12px;display:grid;grid-template-columns:minmax(220px,1fr) auto;gap:10px;align-items:center}
+.search{display:flex;align-items:center;gap:8px;background:#fffafc;border:1px solid rgba(111,74,168,.16);border-radius:14px;padding:0 12px}.search input{width:100%;border:0;outline:0;background:transparent;padding:11px 0;color:var(--ink)}
+.actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px}.btn{border:0;border-radius:13px;padding:10px 13px;font-weight:800;color:var(--ink);background:#f7f1fb}.btn:hover{transform:translateY(-1px)}.btn.primary{background:linear-gradient(135deg,var(--plum),var(--plum2));color:#fff;box-shadow:0 8px 18px rgba(111,74,168,.24)}.btn.danger{background:#fff0f0;color:#a74b4b}.btn.gold{background:#fff1c9;color:#785514}
+.stats{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.stat{background:#fff;border:1px solid var(--line);border-radius:13px;padding:8px 11px;font-size:13px}.stat strong{font-size:16px;color:var(--plum)}
+.tabs{display:flex;gap:8px;overflow:auto;padding:2px 0 10px;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}.tab{white-space:nowrap;border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 13px;font-weight:800;color:var(--muted)}.tab.active{color:#fff;background:var(--plum);border-color:var(--plum)}
+.category{margin:13px 0 22px}.cat-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:10px}.cat-title{display:flex;align-items:center;gap:10px}.cat-title .emoji{font-size:28px}.cat-title h2{font-size:21px;margin:0}.cat-title p{margin:2px 0 0;color:var(--muted);font-size:12px}.cat-tools{display:flex;gap:6px}.mini{border:1px solid var(--line);background:#fff;padding:7px 9px;border-radius:10px;font-weight:800;font-size:12px;color:var(--plum)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.item{display:grid;grid-template-columns:34px minmax(0,1fr) minmax(110px,150px);gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px 11px;transition:.16s ease;box-shadow:0 2px 8px rgba(84,62,100,.035)}.item:hover{border-color:rgba(111,74,168,.30);box-shadow:0 6px 16px rgba(84,62,100,.08)}.item.selected{background:linear-gradient(135deg,#fffef8,#faf2ff);border-color:rgba(111,74,168,.38);box-shadow:0 7px 18px rgba(111,74,168,.11)}
+.check{width:24px;height:24px;accent-color:var(--plum)}.item-name{font-weight:850;font-size:15px}.item-id{font-size:10px;color:#aa9bb5;margin-right:5px}.qty-label{font-size:10px;color:var(--muted);margin-bottom:3px}.qty{width:100%;border:1px solid rgba(111,74,168,.16);background:#fff;border-radius:9px;padding:7px 8px;color:var(--ink);outline:none}.qty:focus{border-color:var(--plum)}
+.empty{padding:34px;border:1px dashed rgba(111,74,168,.25);border-radius:18px;text-align:center;color:var(--muted);background:rgba(255,255,255,.55)}
+.output{margin:30px 0 70px;background:linear-gradient(135deg,#4d336e,#7551a7);color:#fff;border-radius:28px;padding:22px;box-shadow:0 20px 45px rgba(78,51,111,.22);position:relative;overflow:hidden}.output:after{content:"🌕";position:absolute;right:-20px;top:-20px;font-size:118px;opacity:.09}.output-head{display:flex;justify-content:space-between;align-items:center;gap:12px;position:relative;z-index:1}.output h2{margin:0;font-size:24px}.output small{color:#e6daf5}.out-actions{display:flex;gap:8px;flex-wrap:wrap}.outbtn{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.12);color:#fff;padding:9px 12px;border-radius:12px;font-weight:800}.outbtn.light{background:#fff;color:#5b3d81}.format{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0 10px;position:relative;z-index:1}.format label{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:7px 10px;font-size:12px}.format input{accent-color:#ffd777}
+textarea{position:relative;z-index:1;width:100%;min-height:280px;resize:vertical;border:1px solid rgba(255,255,255,.22);border-radius:16px;background:rgba(28,17,41,.28);color:#fff;padding:15px;outline:none;line-height:1.7;font-size:14px}
+.toast{position:fixed;left:50%;bottom:calc(18px + var(--safe));transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#2f243e;color:#fff;padding:10px 14px;border-radius:999px;font-weight:800;z-index:99;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}
+.footer{text-align:center;color:var(--muted);font-size:12px;padding:0 0 35px}.lanterns{letter-spacing:8px;font-size:20px;margin-bottom:6px}
+@media(max-width:860px){.hero-card{grid-template-columns:1fr 155px}.moon{width:125px;height:125px}.moon-scene{height:145px}.rabbit{right:10px}.toolbar-card{grid-template-columns:1fr}.actions{justify-content:flex-start}.grid{grid-template-columns:1fr}.item{grid-template-columns:32px 1fr minmax(105px,135px)}}
+@media(max-width:560px){.wrap{width:min(100% - 16px,1280px)}.hero{padding-top:12px}.hero-card{padding:20px 18px;grid-template-columns:1fr}.moon-scene{display:none}.kicker{font-size:12px}h1{font-size:31px}.toolbar{top:0}.toolbar-card{border-radius:17px;padding:8px}.actions .btn{padding:9px 10px;font-size:12px}.cat-head{align-items:flex-start;flex-direction:column}.item{grid-template-columns:30px minmax(0,1fr);gap:7px}.item .qty-wrap{grid-column:2}.output{border-radius:20px;padding:16px}.output-head{align-items:flex-start;flex-direction:column}.out-actions{width:100%}.outbtn{flex:1}.stats{margin-top:8px}}
+@media print{.hero,.toolbar,.tabs,.cat-tools,.stats,.footer{display:none!important}.wrap{width:100%}.grid{grid-template-columns:repeat(2,1fr)}.item:not(.selected){display:none}.output{color:#000;background:#fff;box-shadow:none;border:1px solid #ddd}.output textarea{color:#000;background:#fff;border:1px solid #ddd}.out-actions,.format{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="hero">
+    <div class="hero-card">
+      <div>
+        <span class="kicker">🏮 中秋烤肉企劃 · 嫦娥月兔版</span>
+        <h1>250 項烤肉勾選清單</h1>
+        <p>5 大分類各 50 項。勾好你要買的東西後，一鍵產生「最終採購文字」，直接複製貼到 LINE、Messenger 或群組。</p>
+        <div class="hero-badges"><span class="badge">👥 11 人</span><span class="badge">💰 NT$800 / 人</span><span class="badge">🧾 總預算 NT$8,800</span><span class="badge">🐇 自動記住勾選</span></div>
+      </div>
+      <div class="moon-scene" aria-hidden="true"><div class="moon"></div><div class="rabbit"><span class="eye"></span><span class="tail"></span></div><div class="chang-e">嫦娥姐姐：記得多買菜 ✦</div></div>
+    </div>
+  </section>
+
+  <section class="toolbar">
+    <div class="toolbar-card">
+      <div class="search">🔎 <input id="search" placeholder="搜尋牛肉、蝦、飲料、烤網…" autocomplete="off"></div>
+      <div class="actions"><button class="btn gold" id="selectVisible">✓ 勾選目前顯示</button><button class="btn" id="generate">📝 產生最終清單</button><button class="btn danger" id="clearAll">清空全部</button></div>
+    </div>
+  </section>
+
+  <div class="stats"><div class="stat">已選 <strong id="selectedCount">0</strong> / 250 項</div><div class="stat">分類 <strong id="categoryCount">0</strong> / 5</div><div class="stat">建議預算基準 <strong>NT$8,800</strong></div></div>
+  <nav class="tabs" id="tabs"><button class="tab active" data-filter="ALL">🌕 全部 250</button></nav>
+  <main id="catalog"></main>
+
+  <section class="output" id="outputSection">
+    <div class="output-head"><div><h2>🌕 我的最終採購清單</h2><small>勾選後會自動更新，也可以修改每項份量。</small></div><div class="out-actions"><button class="outbtn light" id="copyBtn">📋 複製文字</button><button class="outbtn" id="downloadBtn">⬇︎ 下載 TXT</button></div></div>
+    <div class="format"><label><input type="radio" name="fmt" value="grouped" checked> 分類＋份量</label><label><input type="radio" name="fmt" value="compact"> 簡潔版</label><label><input type="radio" name="fmt" value="names"> 只要品名</label></div>
+    <textarea id="outputText" readonly placeholder="還沒勾選品項。上面選好後，這裡會自動產生可直接貼到訊息的文字。"></textarea>
+  </section>
+  <footer class="footer"><div class="lanterns">🏮 🐇 🌕 🥮 🏮</div>中秋烤肉採購小幫手 · 資料只儲存在你的瀏覽器</footer>
+</div>
+<div class="toast" id="toast">已複製 ✦</div>
+<script>
+const DATA=[{"id":"A","name":"肉類與肉製品","icon":"🥩","budget":2700,"tone":"rose","items":[{"id":"A01","name":"牛五花","qty":"300-400 g"},{"id":"A02","name":"牛小排","qty":"300-400 g"},{"id":"A03","name":"無骨牛小排","qty":"300-400 g"},{"id":"A04","name":"牛肋條","qty":"300-400 g"},{"id":"A05","name":"牛板腱","qty":"300-400 g"},{"id":"A06","name":"牛肩胛","qty":"300-400 g"},{"id":"A07","name":"牛腹肉","qty":"300-400 g"},{"id":"A08","name":"牛臀肉","qty":"300-400 g"},{"id":"A09","name":"牛舌","qty":"200-300 g"},{"id":"A10","name":"骰子牛","qty":"300-400 g"},{"id":"A11","name":"牛肉串","qty":"8-10 串"},{"id":"A12","name":"韓式醃牛肉","qty":"300-400 g"},{"id":"A13","name":"黑胡椒牛柳","qty":"300-400 g"},{"id":"A14","name":"蒜香牛肉片","qty":"300-400 g"},{"id":"A15","name":"孜然牛肉串","qty":"8-10 串"},{"id":"A16","name":"豬五花","qty":"400-500 g"},{"id":"A17","name":"豬梅花","qty":"400-500 g"},{"id":"A18","name":"豬里肌","qty":"300-400 g"},{"id":"A19","name":"松阪豬","qty":"250-350 g"},{"id":"A20","name":"豬頸肉","qty":"300-400 g"},{"id":"A21","name":"豬肋排","qty":"500-700 g"},{"id":"A22","name":"豬肋條","qty":"400-500 g"},{"id":"A23","name":"豬肉串","qty":"8-10 串"},{"id":"A24","name":"味噌豬肉","qty":"300-400 g"},{"id":"A25","name":"韓式辣豬肉","qty":"300-400 g"},{"id":"A26","name":"蒜香豬肉","qty":"300-400 g"},{"id":"A27","name":"黑胡椒豬柳","qty":"300-400 g"},{"id":"A28","name":"培根片","qty":"1-2 包"},{"id":"A29","name":"培根捲","qty":"8-10 卷"},{"id":"A30","name":"德式豬腳片","qty":"300-400 g"},{"id":"A31","name":"去骨雞腿排","qty":"2-3 片"},{"id":"A32","name":"雞胸肉","qty":"2 片"},{"id":"A33","name":"雞翅","qty":"10-12 支"},{"id":"A34","name":"二節翅","qty":"10-12 支"},{"id":"A35","name":"雞小腿","qty":"8-10 支"},{"id":"A36","name":"雞軟骨","qty":"250-300 g"},{"id":"A37","name":"雞心","qty":"250-300 g"},{"id":"A38","name":"雞胗","qty":"250-300 g"},{"id":"A39","name":"雞皮串","qty":"6-8 串"},{"id":"A40","name":"雞肉蔥串","qty":"8-10 串"},{"id":"A41","name":"照燒雞肉串","qty":"8-10 串"},{"id":"A42","name":"紐奧良雞翅","qty":"10-12 支"},{"id":"A43","name":"孜然雞肉串","qty":"8-10 串"},{"id":"A44","name":"羊肩肉片","qty":"300-400 g"},{"id":"A45","name":"羊肉串","qty":"8-10 串"},{"id":"A46","name":"孜然羊肉串","qty":"8-10 串"},{"id":"A47","name":"鴨胸","qty":"1-2 片"},{"id":"A48","name":"鴨肉串","qty":"6-8 串"},{"id":"A49","name":"台灣香腸","qty":"8-10 條"},{"id":"A50","name":"墨西哥辣腸","qty":"6-8 條"}]},{"id":"B","name":"海鮮與加工烤物","icon":"🦐","budget":1700,"tone":"ocean","items":[{"id":"B01","name":"白蝦","qty":"15-20 隻"},{"id":"B02","name":"草蝦","qty":"12-16 隻"},{"id":"B03","name":"泰國蝦","qty":"8-12 隻"},{"id":"B04","name":"天使紅蝦","qty":"8-12 隻"},{"id":"B05","name":"阿根廷紅蝦","qty":"8-12 隻"},{"id":"B06","name":"蛤蜊","qty":"500-800 g"},{"id":"B07","name":"生蠔","qty":"6-10 顆"},{"id":"B08","name":"淡菜","qty":"500-700 g"},{"id":"B09","name":"扇貝","qty":"6-10 顆"},{"id":"B10","name":"干貝","qty":"8-12 顆"},{"id":"B11","name":"透抽","qty":"1-2 尾"},{"id":"B12","name":"小卷","qty":"6-8 尾"},{"id":"B13","name":"花枝","qty":"300-400 g"},{"id":"B14","name":"章魚","qty":"300-400 g"},{"id":"B15","name":"柳葉魚","qty":"10-12 尾"},{"id":"B16","name":"秋刀魚","qty":"3-4 尾"},{"id":"B17","name":"鯖魚","qty":"2-3 尾"},{"id":"B18","name":"鮭魚","qty":"300-400 g"},{"id":"B19","name":"鯛魚片","qty":"300-400 g"},{"id":"B20","name":"虱目魚肚","qty":"1-2 片"},{"id":"B21","name":"香魚","qty":"3-4 尾"},{"id":"B22","name":"鯧魚","qty":"1 尾"},{"id":"B23","name":"鰻魚蒲燒","qty":"1-2 盒"},{"id":"B24","name":"鮮蚵","qty":"300-500 g"},{"id":"B25","name":"海瓜子","qty":"500-700 g"},{"id":"B26","name":"米血糕","qty":"2 包"},{"id":"B27","name":"甜不辣","qty":"2 包"},{"id":"B28","name":"黑輪","qty":"2 包"},{"id":"B29","name":"竹輪","qty":"2 包"},{"id":"B30","name":"魚板","qty":"1-2 包"},{"id":"B31","name":"貢丸","qty":"1-2 包"},{"id":"B32","name":"花枝丸","qty":"1-2 包"},{"id":"B33","name":"魚丸","qty":"1-2 包"},{"id":"B34","name":"虱目魚丸","qty":"1-2 包"},{"id":"B35","name":"墨魚丸","qty":"1-2 包"},{"id":"B36","name":"鑫鑫腸","qty":"2 包"},{"id":"B37","name":"德式香腸","qty":"6-8 條"},{"id":"B38","name":"起司香腸","qty":"6-8 條"},{"id":"B39","name":"辣味香腸","qty":"6-8 條"},{"id":"B40","name":"小熱狗","qty":"1-2 包"},{"id":"B41","name":"培根金針菇卷","qty":"8-10 卷"},{"id":"B42","name":"培根蘆筍卷","qty":"8-10 卷"},{"id":"B43","name":"百頁豆腐","qty":"2 條"},{"id":"B44","name":"豆干","qty":"8-10 片"},{"id":"B45","name":"油豆腐","qty":"1-2 盒"},{"id":"B46","name":"魚豆腐","qty":"1-2 包"},{"id":"B47","name":"蟹肉棒","qty":"1-2 包"},{"id":"B48","name":"起司球／起司條","qty":"1-2 包"},{"id":"B49","name":"烤麵筋","qty":"8-10 串"},{"id":"B50","name":"年糕串","qty":"8-10 串"}]},{"id":"C","name":"蔬菜・菇類・豆製品・主食","icon":"🥬","budget":1300,"tone":"leaf","items":[{"id":"C01","name":"玉米","qty":"4-6 根"},{"id":"C02","name":"玉米筍","qty":"2 包"},{"id":"C03","name":"杏鮑菇","qty":"4-6 根"},{"id":"C04","name":"香菇","qty":"2 包"},{"id":"C05","name":"金針菇","qty":"2-3 包"},{"id":"C06","name":"鴻喜菇","qty":"2 包"},{"id":"C07","name":"雪白菇","qty":"2 包"},{"id":"C08","name":"舞菇","qty":"2 包"},{"id":"C09","name":"櫛瓜","qty":"2-3 條"},{"id":"C10","name":"青椒","qty":"3-4 顆"},{"id":"C11","name":"紅甜椒","qty":"2-3 顆"},{"id":"C12","name":"黃甜椒","qty":"2-3 顆"},{"id":"C13","name":"洋蔥","qty":"3-4 顆"},{"id":"C14","name":"筊白筍","qty":"8-10 根"},{"id":"C15","name":"茄子","qty":"2-3 條"},{"id":"C16","name":"絲瓜","qty":"1-2 條"},{"id":"C17","name":"秋葵","qty":"1-2 包"},{"id":"C18","name":"蘆筍","qty":"2 把"},{"id":"C19","name":"青蔥","qty":"2 把"},{"id":"C20","name":"大蒜","qty":"2-3 顆"},{"id":"C21","name":"生菜","qty":"2-3 包"},{"id":"C22","name":"高麗菜","qty":"1 顆"},{"id":"C23","name":"大白菜","qty":"半顆-1 顆"},{"id":"C24","name":"青花菜","qty":"2 顆"},{"id":"C25","name":"白花椰菜","qty":"1-2 顆"},{"id":"C26","name":"南瓜","qty":"半顆-1 顆"},{"id":"C27","name":"地瓜","qty":"5-6 條"},{"id":"C28","name":"馬鈴薯","qty":"5-6 顆"},{"id":"C29","name":"山藥","qty":"1 條"},{"id":"C30","name":"蓮藕","qty":"1 節"},{"id":"C31","name":"牛番茄","qty":"4-5 顆"},{"id":"C32","name":"小番茄串","qty":"2 盒"},{"id":"C33","name":"四季豆","qty":"1-2 包"},{"id":"C34","name":"青龍椒","qty":"1-2 包"},{"id":"C35","name":"糯米椒","qty":"1-2 包"},{"id":"C36","name":"韓式泡菜","qty":"1-2 盒"},{"id":"C37","name":"醃蘿蔔","qty":"1 盒"},{"id":"C38","name":"板豆腐","qty":"2-3 盒"},{"id":"C39","name":"嫩豆腐","qty":"2 盒"},{"id":"C40","name":"厚揚豆腐","qty":"2 盒"},{"id":"C41","name":"吐司","qty":"1-2 條"},{"id":"C42","name":"法國麵包","qty":"1-2 條"},{"id":"C43","name":"蒜香麵包","qty":"1-2 包"},{"id":"C44","name":"白飯","qty":"6-8 碗份"},{"id":"C45","name":"飯糰","qty":"8-10 顆"},{"id":"C46","name":"烤飯糰","qty":"8-10 顆"},{"id":"C47","name":"炒麵","qty":"3-4 包"},{"id":"C48","name":"烏龍麵","qty":"3-4 包"},{"id":"C49","name":"烤麻糬","qty":"1-2 包"},{"id":"C50","name":"小饅頭","qty":"10-12 顆"}]},{"id":"D","name":"飲料・水果・甜點・冰品","icon":"🍹","budget":1200,"tone":"gold","items":[{"id":"D01","name":"礦泉水","qty":"6-8 L"},{"id":"D02","name":"無糖綠茶","qty":"2-3 瓶大瓶"},{"id":"D03","name":"無糖烏龍茶","qty":"2-3 瓶大瓶"},{"id":"D04","name":"麥茶","qty":"2 瓶大瓶"},{"id":"D05","name":"紅茶","qty":"2 瓶大瓶"},{"id":"D06","name":"冬瓜茶","qty":"2 瓶大瓶"},{"id":"D07","name":"可樂","qty":"2 瓶大瓶"},{"id":"D08","name":"雪碧","qty":"1-2 瓶大瓶"},{"id":"D09","name":"沙士","qty":"1-2 瓶大瓶"},{"id":"D10","name":"原味氣泡水","qty":"6-8 罐"},{"id":"D11","name":"檸檬氣泡水","qty":"6-8 罐"},{"id":"D12","name":"蘋果汁","qty":"1-2 L"},{"id":"D13","name":"柳橙汁","qty":"1-2 L"},{"id":"D14","name":"葡萄汁","qty":"1-2 L"},{"id":"D15","name":"芭樂汁","qty":"1-2 L"},{"id":"D16","name":"運動飲料","qty":"2-3 L"},{"id":"D17","name":"電解質水","qty":"2-3 L"},{"id":"D18","name":"無糖豆漿","qty":"1-2 L"},{"id":"D19","name":"鮮奶","qty":"1-2 L"},{"id":"D20","name":"瓶裝咖啡／冷萃","qty":"4-6 瓶"},{"id":"D21","name":"啤酒","qty":"6-12 罐"},{"id":"D22","name":"無酒精啤酒","qty":"4-6 罐"},{"id":"D23","name":"沙瓦","qty":"6-8 罐"},{"id":"D24","name":"Highball","qty":"6-8 罐"},{"id":"D25","name":"梅酒蘇打","qty":"4-6 罐"},{"id":"D26","name":"西瓜","qty":"半顆-1 顆"},{"id":"D27","name":"鳳梨","qty":"1 顆"},{"id":"D28","name":"葡萄","qty":"1-2 串"},{"id":"D29","name":"芭樂","qty":"4-5 顆"},{"id":"D30","name":"柳橙","qty":"5-6 顆"},{"id":"D31","name":"水梨","qty":"3-4 顆"},{"id":"D32","name":"蘋果","qty":"4-5 顆"},{"id":"D33","name":"奇異果","qty":"6-8 顆"},{"id":"D34","name":"香蕉","qty":"1 把"},{"id":"D35","name":"哈密瓜","qty":"1 顆"},{"id":"D36","name":"火龍果","qty":"2-3 顆"},{"id":"D37","name":"棉花糖","qty":"2 包"},{"id":"D38","name":"巧克力棉花糖","qty":"1-2 包"},{"id":"D39","name":"布丁","qty":"6-8 個"},{"id":"D40","name":"果凍","qty":"1 大包"},{"id":"D41","name":"仙草凍","qty":"1-2 盒"},{"id":"D42","name":"愛玉","qty":"1-2 盒"},{"id":"D43","name":"豆花","qty":"4-6 碗"},{"id":"D44","name":"冰棒","qty":"11 支"},{"id":"D45","name":"雪糕","qty":"11 支"},{"id":"D46","name":"冰淇淋","qty":"1-2 大盒"},{"id":"D47","name":"銅鑼燒","qty":"6-8 個"},{"id":"D48","name":"鯛魚燒","qty":"6-8 個"},{"id":"D49","name":"乳酪蛋糕","qty":"1 個"},{"id":"D50","name":"泡芙","qty":"10-12 個"}]},{"id":"E","name":"器材・耗材・醬料・調味","icon":"🔥","budget":1300,"tone":"violet","items":[{"id":"E01","name":"烤肉爐","qty":"2 台"},{"id":"E02","name":"木炭","qty":"6-8 kg"},{"id":"E03","name":"備用烤網","qty":"3-4 張"},{"id":"E04","name":"火種","qty":"1-2 包"},{"id":"E05","name":"點火槍","qty":"1 支"},{"id":"E06","name":"打火機","qty":"2 個"},{"id":"E07","name":"噴槍","qty":"1 支"},{"id":"E08","name":"火鉗","qty":"1-2 支"},{"id":"E09","name":"生食夾","qty":"2 支"},{"id":"E10","name":"熟食夾","qty":"2 支"},{"id":"E11","name":"食物剪刀","qty":"2 把"},{"id":"E12","name":"烤肉刷","qty":"2 支"},{"id":"E13","name":"耐熱烤肉手套","qty":"1-2 雙"},{"id":"E14","name":"一次性手套","qty":"1 盒"},{"id":"E15","name":"鋁箔紙","qty":"2 捲"},{"id":"E16","name":"鋁箔盤","qty":"10-15 個"},{"id":"E17","name":"烤肉竹籤","qty":"1-2 包"},{"id":"E18","name":"紙盤","qty":"20-30 個"},{"id":"E19","name":"紙碗","qty":"15-20 個"},{"id":"E20","name":"紙杯","qty":"20-30 個"},{"id":"E21","name":"免洗筷","qty":"20 雙"},{"id":"E22","name":"湯匙／叉子","qty":"各 10-15 支"},{"id":"E23","name":"廚房紙巾","qty":"2-3 捲"},{"id":"E24","name":"濕紙巾","qty":"2-3 包"},{"id":"E25","name":"垃圾袋","qty":"8-10 個"},{"id":"E26","name":"廚餘袋","qty":"4-6 個"},{"id":"E27","name":"保鮮膜","qty":"1 捲"},{"id":"E28","name":"夾鏈袋","qty":"1 盒"},{"id":"E29","name":"保冷箱／冰桶","qty":"1-2 個"},{"id":"E30","name":"食用冰塊","qty":"10-15 kg"},{"id":"E31","name":"大型飲料桶","qty":"1 個"},{"id":"E32","name":"刀具＋砧板","qty":"1-2 組"},{"id":"E33","name":"食材托盤","qty":"6-10 個"},{"id":"E34","name":"洗手液","qty":"1 瓶"},{"id":"E35","name":"防蚊液","qty":"1-2 瓶"},{"id":"E36","name":"烤肉醬","qty":"2 瓶"},{"id":"E37","name":"海鹽","qty":"1 罐"},{"id":"E38","name":"黑胡椒","qty":"1 罐"},{"id":"E39","name":"蒜蓉醬","qty":"1 瓶"},{"id":"E40","name":"韓式烤肉醬","qty":"1 瓶"},{"id":"E41","name":"日式燒肉醬","qty":"1 瓶"},{"id":"E42","name":"味噌醬","qty":"1 盒"},{"id":"E43","name":"辣椒粉","qty":"1 罐"},{"id":"E44","name":"孜然粉","qty":"1 罐"},{"id":"E45","name":"七味粉","qty":"1 罐"},{"id":"E46","name":"奶油","qty":"1 盒"},{"id":"E47","name":"蒜頭","qty":"2-3 顆"},{"id":"E48","name":"檸檬","qty":"4-6 顆"},{"id":"E49","name":"蜂蜜","qty":"1 小瓶"},{"id":"E50","name":"起司絲／起司片","qty":"1-2 包"}]}];
+const STORE_KEY='midautumn-bbq-250-v1';
+let state={selected:{},qty:{},filter:'ALL',search:''};
+try{const saved=JSON.parse(localStorage.getItem(STORE_KEY)||'null');if(saved) state={...state,...saved};}catch(e){}
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const catalog=$('#catalog'), tabs=$('#tabs'), search=$('#search'), out=$('#outputText');
+
+function save(){localStorage.setItem(STORE_KEY,JSON.stringify(state));}
+function allItems(){return DATA.flatMap(c=>c.items.map(i=>({...i,catId:c.id,catName:c.name,icon:c.icon})));}
+function visibleItems(){const q=state.search.trim().toLowerCase();return allItems().filter(i=>(state.filter==='ALL'||i.catId===state.filter)&&(!q||(`${i.name} ${i.qty} ${i.catName}`).toLowerCase().includes(q)));}
+
+function buildTabs(){DATA.forEach(c=>{const b=document.createElement('button');b.className='tab';b.dataset.filter=c.id;b.textContent=`${c.icon} ${c.id} ${c.name} 50`;tabs.appendChild(b)});}
+function esc(s){return String(s).replace(/[&<>\"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));}
+function render(){
+  $$('.tab').forEach(b=>b.classList.toggle('active',b.dataset.filter===state.filter));
+  const q=state.search.trim().toLowerCase(); let html='';
+  DATA.forEach(c=>{
+    if(state.filter!=='ALL'&&state.filter!==c.id)return;
+    const items=c.items.filter(i=>!q||(`${i.name} ${i.qty} ${c.name}`).toLowerCase().includes(q));
+    if(!items.length)return;
+    const selectedInCat=c.items.filter(i=>state.selected[i.id]).length;
+    html+=`<section class="category" id="cat-${c.id}"><div class="cat-head"><div class="cat-title"><span class="emoji">${c.icon}</span><div><h2>${c.id}｜${c.name}</h2><p>50 項選擇 · 建議分類預算 NT$${c.budget.toLocaleString()} · 已選 ${selectedInCat}</p></div></div><div class="cat-tools"><button class="mini" data-cat-select="${c.id}">全選此類</button><button class="mini" data-cat-clear="${c.id}">清除此類</button></div></div><div class="grid">`;
+    items.forEach(i=>{
+      const checked=!!state.selected[i.id], qty=state.qty[i.id]??i.qty;
+      html+=`<label class="item ${checked?'selected':''}" data-id="${i.id}"><input class="check" type="checkbox" data-check="${i.id}" ${checked?'checked':''}><div><div class="item-name"><span class="item-id">${i.id}</span>${esc(i.name)}</div></div><div class="qty-wrap"><div class="qty-label">建議／自訂份量</div><input class="qty" data-qty="${i.id}" value="${esc(qty)}" aria-label="${esc(i.name)}份量"></div></label>`;
+    });
+    html+='</div></section>';
+  });
+  catalog.innerHTML=html||'<div class="empty">🌙 找不到符合條件的品項，換個關鍵字試試。</div>';
+  bindCatalog(); updateStats(); generateText();
+}
+function bindCatalog(){
+  $$('[data-check]').forEach(el=>el.addEventListener('change',e=>{const id=e.target.dataset.check;state.selected[id]=e.target.checked;if(!e.target.checked)delete state.selected[id];save();render();}));
+  $$('[data-qty]').forEach(el=>{el.addEventListener('click',e=>e.stopPropagation());el.addEventListener('input',e=>{state.qty[e.target.dataset.qty]=e.target.value;save();generateText();});});
+  $$('[data-cat-select]').forEach(b=>b.addEventListener('click',()=>{const c=DATA.find(x=>x.id===b.dataset.catSelect);c.items.forEach(i=>state.selected[i.id]=true);save();render();}));
+  $$('[data-cat-clear]').forEach(b=>b.addEventListener('click',()=>{const c=DATA.find(x=>x.id===b.dataset.catClear);c.items.forEach(i=>delete state.selected[i.id]);save();render();}));
+}
+function updateStats(){const ids=Object.keys(state.selected).filter(k=>state.selected[k]);$('#selectedCount').textContent=ids.length;const cats=DATA.filter(c=>c.items.some(i=>state.selected[i.id])).length;$('#categoryCount').textContent=cats;}
+function formatText(){
+  const fmt=document.querySelector('input[name="fmt"]:checked').value;
+  const chosen=DATA.map(c=>({...c,items:c.items.filter(i=>state.selected[i.id])})).filter(c=>c.items.length);
+  if(!chosen.length)return '';
+  if(fmt==='names') return chosen.flatMap(c=>c.items.map(i=>i.name)).join('、');
+  let lines=['🌕 11 人中秋烤肉｜最終採購清單','預算基準：NT$800／人｜總預算 NT$8,800',''];
+  chosen.forEach(c=>{lines.push(`${c.icon} ${c.id}｜${c.name}（${c.items.length}項）`);c.items.forEach(i=>{const qty=(state.qty[i.id]??i.qty).trim();lines.push(fmt==='compact'?`・${i.name}`:`・${i.name}${qty?`｜${qty}`:''}`)});lines.push('');});
+  lines.push(`✅ 共 ${chosen.reduce((n,c)=>n+c.items.length,0)} 項`);return lines.join('\n');
+}
+function generateText(){out.value=formatText();}
+function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1400)}
+
+buildTabs(); search.value=state.search; render();
+tabs.addEventListener('click',e=>{const b=e.target.closest('.tab');if(!b)return;state.filter=b.dataset.filter;save();render();window.scrollTo({top:$('.stats').offsetTop-75,behavior:'smooth'});});
+search.addEventListener('input',e=>{state.search=e.target.value;save();render();});
+$('#selectVisible').addEventListener('click',()=>{visibleItems().forEach(i=>state.selected[i.id]=true);save();render();toast('已勾選目前顯示的品項');});
+$('#clearAll').addEventListener('click',()=>{if(confirm('確定要清空全部勾選嗎？')){state.selected={};save();render();toast('已清空')}});
+$('#generate').addEventListener('click',()=>{generateText();$('#outputSection').scrollIntoView({behavior:'smooth',block:'start'});});
+$$('input[name="fmt"]').forEach(r=>r.addEventListener('change',generateText));
+$('#copyBtn').addEventListener('click',async()=>{generateText();if(!out.value){toast('請先勾選品項');return;}try{await navigator.clipboard.writeText(out.value);toast('已複製，可以直接貼到訊息');}catch(e){out.select();document.execCommand('copy');toast('已複製，可以直接貼到訊息');}});
+$('#downloadBtn').addEventListener('click',()=>{generateText();if(!out.value){toast('請先勾選品項');return;}const blob=new Blob([out.value],{type:'text/plain;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='中秋烤肉最終採購清單.txt';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),500);});
+</script>
+</body></html>
